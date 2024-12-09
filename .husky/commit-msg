@@ -4,6 +4,9 @@ branch_name=$(git symbolic-ref --short HEAD)
 # 取得當前的 commit message
 commit_msg_file=$1
 commit_msg=$(cat "$commit_msg_file")
+echo "$1"
+echo "$2"
+echo "$3"
 
 # 如果 commit message 尚未包含分支名稱，則加上
 if [[ ! "$commit_msg" == *"$branch_name"* ]]; then
