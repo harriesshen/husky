@@ -1,0 +1,11 @@
+# 取得當前分支名稱
+branch_name=$(git symbolic-ref --short HEAD)
+
+# 取得當前的 commit message
+commit_msg_file=$1
+commit_msg=$(cat "$commit_msg_file")
+
+# 如果 commit message 尚未包含分支名稱，則加上
+if [[ ! "$commit_msg" == *"$branch_name"* ]]; then
+  echo "[$branch_name] $commit_msg" > "$commit_msg_file"
+fi
