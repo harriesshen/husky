@@ -1,2 +1,2 @@
-echo "pre-commit"
+echo "trigger pre-commit"
 exit 0
