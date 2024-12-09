@@ -1,5 +1,5 @@
 echo "trigger commit-msg"
 
-message=$1
+message="$(cat $1)"
 echo "commit message: $message"
 exit 0
